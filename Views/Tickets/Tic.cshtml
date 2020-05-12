@@ -1,0 +1,69 @@
+﻿@model StadiumManagementSys.Models.Tickets
+
+@{
+    ViewData["Title"] = "Buy Tickets";
+}
+<h2>@ViewData["Title"]</h2>
+<hr />
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form asp-action="Tic" asp-controller="Tickets" method="post" role="form">
+            <div class="modal-header">
+                <h4 class="modal-title">Booking Income</h4>
+                @*<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>*@
+                <a asp-action="Index" asp-controller="Home" class="close" data-dismiss="modal" aria-hidden="true">x</a>
+            </div>
+            <div class="modal-body">
+
+               
+                <div class="form-group">
+                    <label asp-for="Name">Name</label>
+                    <input asp-for="Name" class="form-control" placeholder="Enter Your Name" name="Name" required="required">
+
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Email"> Email </label>
+                    <input asp-for="Email" class="form-control" placeholder="Enter Organization's Email" name="Email" required="required">
+                </div>
+
+                <div class="form-group">
+
+                    <label asp-for="Phone"> Phone </label>
+                    <input asp-for="Phone" class="form-control" placeholder="Enter Organization's Phone Number" name="Phone" required="required">
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Catagory">Catagory of Tickets</label>
+                    <select class="form-control" asp-for="Catagory">
+                        <option class="hidden" selected="" disabled="">Please select one</option>
+                        <option value="VIP">VIP</option>
+                        <option value="Regular">Regular</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Quantity">Quantity</label>
+                    <select class="form-control" asp-for="Quantity">
+                        <option class="hidden" selected="" disabled="">Please select one</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="GameNo">Game No</label>
+                    <input asp-for="GameNo" class="form-control" placeholder="Enter Game No" name="GameNo" required="required">
+                </div>
+
+                
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-success" value="Send">
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+﻿@model StadiumManagementSys.Models.Booking
+
+@{
+    ViewData["Title"] = "Booking";
+}
+<h2>@ViewData["Title"]</h2>
+<hr />
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form asp-action="Booking" asp-controller="Tickets" method="post" role="form">
+            <div class="modal-header">
+                <h4 class="modal-title">Request for Booking</h4>
+                @*<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>*@
+                <a asp-action="Index" asp-controller="Home" class="close" data-dismiss="modal" aria-hidden="true">x</a>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label asp-for="Name">Name</label>
+                    <input asp-for="Name" class="form-control" placeholder="Enter Your Name" name="Name" required="required">
+
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Email">Email</label>
+                    <input type="email" asp-for="Email" class="form-control" placeholder="Enter Your Email" name="Email" required="required">
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Phone">Phone</label>
+                    <input asp-for="Phone" class="form-control" placeholder="Enter Your Phone Number" name="Phone" required="required">
+                </div> 
+                
+                <div class="form-group">
+
+                    <label asp-for="StartingDate">Booking Date Start</label>
+                    <input asp-for="StartingDate" class="form-control" placeholder="Enter Your Phone Number" name="StartingDate" required="required">
+                </div>
+                
+                <div class="form-group">
+
+                    <label asp-for="EndingDate">Booking Date Finish</label>
+                    <input asp-for="EndingDate" class="form-control" placeholder="Enter Your Phone Number" name="EndingDate" required="required">
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Purpose">Booking Purpose</label>
+                    <input asp-for="Purpose" class="form-control" placeholder="Enter Your Booking Purpose" name="Purpose" required="required">
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Comment">Write Comment</label><br />
+                    <textarea asp-for="Comment" name="comment" cols="76" rows="5" placeholder="If You Have Any Query"></textarea>
+                    @*<input asp-for="Comment" class="form-control" placeholder="Enter Employee Comment" name="Comment">*@
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-success" value="Send Request">
+            </div>
+        </form>
+    </div>
+</div>

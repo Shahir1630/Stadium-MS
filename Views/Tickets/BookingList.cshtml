@@ -1,0 +1,46 @@
+﻿@model List<StadiumManagementSys.Models.Booking>;
+
+
+@{
+    ViewData["Title"] = "Booking List";
+}
+
+
+<h2>Booking Request</h2>
+<div class="container">
+
+   
+
+    <div style="margin:20px">
+
+    </div>
+    <table class="table table-bordered">
+        <thead style="background:#435d7d;color:white">
+            <tr>
+                <th>Request No</th>
+                <th>Name</th>
+                <th>Purpose</th>
+                <th>Phone</th>
+                <th>Details</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody style="background:#ecf0f1">
+
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.RequestNo</td>
+                    @*<td><a asp-controller="Student" asp-action="Info" asp-route-Id="@x.Id">@x.Name</a></td>*@
+                    <td>@x.Name</td>
+                    <td>@x.Purpose</td>
+                    <td>@x.Phone</td>
+                   
+                    <td><a class="btn btn-info" role="button" asp-controller="Tickets" asp-action="BookingDetails" asp-route-RequestNo="@x.RequestNo">Details</a></td>
+                    <td><a  style="background:red"class="btn btn-info" role="button" asp-controller="Tickets" asp-action="Delete" asp-route-RequestNo="@x.RequestNo">Delete</a></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

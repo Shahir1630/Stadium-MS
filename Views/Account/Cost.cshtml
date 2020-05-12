@@ -1,0 +1,64 @@
+﻿@model StadiumManagementSys.Models.Cost
+
+@{
+    ViewData["Title"] = "New Cost";
+}
+<h2>@ViewData["Title"]</h2>
+<hr />
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form asp-action="Cost" asp-controller="Account" method="post" role="form">
+            <div class="modal-header">
+                <h4 class="modal-title">New Cost Form</h4>
+                @*<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>*@
+                <a asp-action="Index" asp-controller="Home" class="close" data-dismiss="modal" aria-hidden="true">x</a>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label asp-for="Id">Transaction Id</label>
+                    <input asp-for="Id" class="form-control" placeholder="Enter Transaction Id" name="Id" required="required">
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="MonthName">Cost Month Name</label>
+                    <select class="form-control" asp-for="MonthName">
+                        <option class="hidden" selected="" disabled="">Please select one</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">	March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Date">Payment Date</label>
+                    <input asp-for="Date" class="form-control" placeholder="Enter Your Phone Number" name="Date" required="required">
+                </div>
+
+                <div class="form-group">
+
+                    <label asp-for="ReasoneOfCost">Cost Reasone</label>
+                    <input asp-for="ReasoneOfCost" class="form-control" placeholder="Enter Reasone for Cost" name="ReasoneOfCost" required="required">
+                </div>
+
+                <div class="form-group">
+
+                    <label asp-for="Amounnt">Amounnt</label>
+                    <input asp-for="Amounnt" class="form-control" placeholder="Enter Cost Ammount" name="Amounnt" required="required">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-success" value="Save Cost">
+            </div>
+        </form>
+    </div>
+</div>

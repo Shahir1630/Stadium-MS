@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Upcoming Games";
+}
+@model List<StadiumManagementSys.Models.GameSchedule>
+
+<div class="container" style="background:#bdc3c7">
+
+    @foreach (var x in Model)
+    {
+        <div class="row" style="height:175px">
+
+            <div class="col-sm-4" style="height:160px;width:350px; margin:12px;margin-left:30px">
+                <h1 style="text-align:center;margin-top:60px"> @x.FirstTeam</h1>
+
+            </div>
+
+
+            <div class="col-sm-4" style="margin:12px;height:160px;width:350px">
+
+                <h3 style="text-align:center"> @x.Tournament</h3>
+                <h5 style="text-align:center"> @x.TourGameNo</h5>
+                <h3 style="text-align:center"> @x.GameTime</h3>
+                @{
+                    var dateAsString = DateTime.Now;
+                    int result = DateTime.Compare(dateAsString, x.GameTime);
+        
+                 
+                }
+                @if (result < 0)
+                {
+                <a class="btn btn-info" asp-controller="Tickets" asp-action="TicketsIndex" role="button" style="margin-left:125px;">Purchase</a>
+                }
+
+            </div>
+
+            <div class="col-sm-4" style="height:160px;width:350px; margin:12px">
+
+                <h1 style="text-align:center;margin-top:60px">@x.SecondTeam </h1>
+            </div>
+
+        </div>
+        <hr />
+
+
+    }
+</div>
+

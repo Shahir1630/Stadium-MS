@@ -1,0 +1,54 @@
+﻿@model StadiumManagementSys.Models.Tickets
+
+@{
+    ViewData["Title"] = "Select Seat";
+}
+<h2>@ViewData["Title"]</h2>
+<hr />
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form asp-action="Seat" asp-controller="Tickets" method="post" role="form">
+            <div class="modal-header">
+                <h4 class="modal-title">Booking Income</h4>
+                @*<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>*@
+                <a asp-action="Index" asp-controller="Home" class="close" data-dismiss="modal" aria-hidden="true">x</a>
+            </div>
+            <div class="modal-body">
+
+               
+
+                <div class="form-group">
+                    <label asp-for="Zone">Zone</label>
+                    <select class="form-control" asp-for="Zone">
+                        <option class="hidden" selected="" disabled="">Please select one</option>
+                        <option value="Zone 1">Zone 1</option>
+                        <option value="Zone 2">Zone 2</option>
+                        <option value="Zone 3">Zone 3</option>
+                        <option value="Zone 4">Zone 4</option>
+                        <option value="Corner 1">Corner 1</option>
+                        <option value="Corner 2">Corner 2</option>
+                        <option value="Corner 3">Corner 3</option>
+                        <option value="Corner 4">Corner 4</option>
+                       
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SeatNo">Seat No</label>
+                    <select class="form-control" asp-for="SeatNo">
+                        <option class="hidden" selected="" disabled="">Please select one</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-success" value="Send">
+            </div>
+        </form>
+    </div>
+</div>

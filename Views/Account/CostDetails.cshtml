@@ -1,0 +1,24 @@
+﻿@model StadiumManagementSys.Models.Cost
+
+
+@{
+    ViewData["Title"] = "Cost Details";
+}
+
+
+<h1>Cost Details </h1>
+<hr />
+
+<div class="container">
+
+
+    <h2>Id             : @Model.Id</h2>
+    <h2>Month Name     : @Model.MonthName</h2>
+    <h2>Cost Reasone   : @Model.ReasoneOfCost</h2>
+    <h2>Date           : @Model.Date</h2>
+    <h2>Amounnt        : @Model.Amounnt</h2>
+
+    <a asp-action="CostList" asp-controller="Account" style="text-align:right">Privious Page</a>
+
+
+</div>

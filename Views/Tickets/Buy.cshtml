@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "Buy Tickets";
+}
+<h2>@ViewData["Title"]</h2>
+<hr />
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th colspan="5" class="text-center">Choose Seat from @ViewData["Zone"]</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center">
+                <td class="available">F</td>
+                @for (var i = 1; i <= 30; i++)
+                {
+                    <td class="available">@i</td>
+                }
+
+            </tr>
+            <tr class="text-center">
+                <td class="available">E</td>
+                @for (var i = 1; i <= 30; i++)
+                {
+                    <td class="available">@i</td>
+                }
+
+            </tr>
+            <tr class="text-center">
+                <td class="available">D</td>
+                @for (var i = 1; i <= 30; i++)
+                {
+                    <td class="available">@i</td>
+                }
+
+            </tr>
+            <tr class="text-center">
+                <td class="available">C</td>
+                @for (var i = 1; i <= 30; i++)
+                {
+                    <td class="available">@i</td>
+                }
+
+            </tr>
+            <tr class="text-center">
+                <td class="available">B</td>
+                @for (var i = 1; i <= 30; i++)
+                {
+                    <td class="available">@i</td>
+                }
+
+            </tr>
+            <tr class="text-center">
+                <td class="available">A</td>
+                @for (var i = 1; i <= 30; i++)
+                {
+                    <td class="available">@i</td>
+                }
+
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-center">
+        <button class="btn btn-warning" id="confirm">Confirm</button>
+        <button class="btn btn-success" id="reload">Reload</button>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var tableEls = document.getElementsByClassName('available');
+
+    for (var i = 0; i < tableEls.length; i++) {
+        tableEls[i].setAttribute('data-index', i);
+        tableEls[i].style.backgroundColor = 'green';
+        tableEls[i].addEventListener("click", collect_index);
+    }
+
+    var index_array_on_click = [];
+    function collect_index() {
+        var data_index = this.getAttribute('data-index');
+        tableEls[data_index].style.backgroundColor = 'yellow';
+        index_array_on_click.push(data_index);
+        console.log(index_array_on_click.length);
+    }
+
+
+    var confirm = document.getElementById('confirm');
+    confirm.addEventListener("click", change_color);
+    function change_color() {
+        for (var i = 0; i < index_array_on_click.length; i++) {
+            tableEls[index_array_on_click[i]].style.backgroundColor = 'red';
+        }
+    }
+    var reload = document.getElementById('reload');
+    reload.addEventListener("click", reload_page);
+    function reload_page() {
+        location.reload();
+    }</script>

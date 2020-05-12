@@ -1,0 +1,24 @@
+﻿@model StadiumManagementSys.Models.Income
+
+
+@{
+    ViewData["Title"] = "Income Details";
+}
+
+
+<h2>Income Details </h2>
+<hr />
+<div class="container">
+
+
+    <h2>Id       : @Model.Id</h2>
+    <h2>Organization Name : @Model.OrganizationName</h2>
+    <h2>Phone    : @Model.Phone </h2>
+    <h2>Email    : @Model.Email</h2>
+    <h2>Booking Cost      : @Model.BookingCost</h2>
+    <h2>Advance  : @Model.Advance</h2>
+    <h2>Due      : @Model.Due</h2>
+    <h2>Date     : @Model.Date</h2>
+     <br />
+    <a asp-action="BookingIncomeList" asp-controller="Account" style="text-align:right">Privious Page</a>
+</div>

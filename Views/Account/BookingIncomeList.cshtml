@@ -1,0 +1,53 @@
+﻿@model List<StadiumManagementSys.Models.Income>;
+
+
+@{
+    ViewData["Title"] = "Booking Income List";
+}
+
+@{
+    Int64 Total = 0;
+
+}
+
+<div style="margin:0px" class="container">
+
+<h2> Booking Income Lists</h2>
+    <table class="table table-bordered">
+        <thead style="background:#435d7d;color:white">
+            <tr>
+                <th>Date</th>
+                <th>Organization Name</th>
+                <th>Total Cost</th>
+                <th>Due</th>
+                <th>Details</th>
+                <th>Delete</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody style="background:#ecf0f1">
+
+            @foreach (var x in Model)
+            {
+            <tr>
+
+                <td>@x.Date</td>
+                <td>@x.OrganizationName</td>
+                <td>@x.BookingCost</td>
+                <td>@x.Due</td>
+                <td><a class="btn btn-info" role="button" asp-controller="Account" asp-action="BookingIncomeDetails" asp-route-Id="@x.Id">Details</a></td>
+                <td><a style="background-color:red" class="btn btn-info" role="button" asp-controller="Account" asp-action="IncomeDelete" asp-route-Id="@x.Id">Delete</a></td>
+                <td><a style="background-color:sandybrown" class="btn btn-info" role="button" asp-controller="Account" asp-action="BookingIncomeEdit" asp-route-Id="@x.Id">Edit</a></td>
+            </tr>
+
+                @*<tr style="visibility:hidden"> <td>  @(Total += (x.BookingCost - x.Due));</td></tr>*@
+                <div style="visibility:hidden">  @(Total += (x.BookingCost - x.Due));</div>
+            }
+
+        </tbody>
+    </table>
+    <div style="margin-top:20px;float:right;background:#e74c3c;color:white">
+        <h3>Net Booking Income =  @Total  TK Only</h3>
+    </div>
+
+</div>

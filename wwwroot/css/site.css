@@ -1,0 +1,208 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/***************************************************************
+    ***********************************************
+*/
+
+.stadium {
+    width: 610px;
+    height: 460px;
+    margin: 20px;
+}
+
+
+
+.top {
+    width: 610px;
+    height: 120px;
+    margin-bottom: 10px;
+}
+
+.topleft {
+    width: 120px;
+    height: 120px;
+    background: #563af8;
+    margin-right: 10px;
+    float: left;
+    border-radius: 100px 0 0 0;
+}
+
+    .topleft h4 {
+        color: white;
+        font-size: 18px;
+        padding-left: 30px;
+    }
+
+.topmid {
+    width: 350px;
+    height: 120px;
+    background: #d7f;
+    float: left;
+    margin-right: 10px;
+    background: linear-gradient(#18425b, #78a3bc);
+}
+
+    .topmid h3 {
+        color: white;
+        font-size: 30px;
+        padding-left: 134px;
+    }
+
+.topright {
+    width: 120px;
+    height: 120px;
+    background: #563af8;
+    float: left;
+    border-radius: 0 100px 0 0;
+}
+
+    .topright h4 {
+        color: white;
+        font-size: 18px;
+        padding-left: 20px;
+    }
+
+.mid {
+    width: 610px;
+    height: 200px;
+}
+
+    .mid h3 {
+        padding-top: 80px;
+    }
+
+.midleft {
+    width: 120px;
+    height: 200px;
+    background-image: linear-gradient(to right, #145377, #78a3bc);
+    margin-right: 10px;
+    float: left;
+}
+
+    .midleft h3 {
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        padding-left: 35px;
+        writing-mode: vertical-lr;
+        padding-top: 55px;
+    }
+
+.midmid {
+    width: 350px;
+    height: 200px;
+    float: left;
+    margin-right: 10px;
+}
+
+    .midmid img {
+        width: 350px;
+        height: 200px;
+    }
+
+.midright {
+    width: 120px;
+    height: 200px;
+    background-image: linear-gradient(to left, #145377, #78a3bc);
+    float: left;
+}
+
+    .midright h3 {
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        padding-left: 35px;
+        writing-mode: vertical-rl;
+        padding-top: 55px;
+    }
+
+.bottom {
+    width: 610px;
+    height: 120px;
+    margin-top: 10px;
+}
+
+.bottomleft {
+    width: 120px;
+    height: 120px;
+    background: #563af8;
+    margin-right: 10px;
+    float: left;
+    border-radius: 0 0 0 100px;
+}
+
+    .bottomleft h4 {
+        color: white;
+        font-size: 18px;
+        padding-left: 30px;
+       
+    }
+
+.bottommid {
+    width: 350px;
+    height: 120px;
+    background: linear-gradient(#78a3bc, #145377);
+    float: left;
+    margin-right: 10px;
+}
+
+    .bottommid h3 {
+        color: white;
+        font-size: 30px;
+        padding-left: 134px;
+    }
+
+.bottomright {
+    width: 120px;
+    height: 120px;
+    background: #563af8;
+    float: left;
+    border-radius: 0 0 100px 0;
+}
+
+    .bottomright h4 {
+        color: white;
+        font-size: 18px;
+        padding-left: 20px;
+    }
+/*########################################################
+    ######################################################
+    ######################################################
+*/
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+

@@ -1,0 +1,53 @@
+﻿@model List<StadiumManagementSys.Models.Cost>;
+
+
+@{
+    ViewData["Title"] = "Cost List";
+}
+
+<h2>Cost Lists </h2>
+@{
+    Int64 Total = 0;
+
+}
+
+<div class="container">
+
+    <table class="table table-bordered">
+        <thead style="background:#435d7d;color:white">
+            <tr>
+                <th>Date</th>
+                <th>Cost Reasone</th>
+                <th>Amount</th>
+                <th>Details</th>
+                <th>Delete</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody style="background:#ecf0f1">
+
+            @foreach (var x in Model)
+            {
+                <tr>
+
+                    <td>@x.Date</td>
+                    <td>@x.ReasoneOfCost</td>
+                    <td>@x.Amounnt</td>
+
+
+                    <td><a class="btn btn-info" role="button" asp-controller="Account" asp-action="CostDetails" asp-route-Id="@x.Id">Details</a></td>
+                    <td><a style="background-color:red" class="btn btn-info" role="button" asp-controller="Account" asp-action="CostDelete" asp-route-Id="@x.Id">Delete</a></td>
+                    <td><a style="background-color:sandybrown" class="btn btn-info" role="button" asp-controller="Account" asp-action="CostEdit" asp-route-Id="@x.Id">Edit</a></td>
+                </tr>
+
+                <div style="visibility:hidden">  @(Total += x.Amounnt));</div>
+
+            }
+
+        </tbody>
+    </table>
+    <div style="margin-top:20px;float:right;background:#e74c3c;color:white">
+        <h3>Net Cost =  @Total  TK Only</h3>
+    </div>
+
+</div>

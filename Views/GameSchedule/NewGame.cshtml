@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "New Game";
+}
+@model StadiumManagementSys.Models.GameSchedule
+
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="NewGame" asp-controller="GameSchedule" method="post" enctype="multipart/form-data" role="form">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add New Game</h4>
+                  
+                    <a asp-action="SetSchedule" asp-controller="GameSchedule" class="close" data-dismiss="modal" aria-hidden="true">x</a>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label asp-for="Tournament">Tournament Name</label>
+                        <input asp-for="Tournament" class="form-control" placeholder="Enter Tournament Name" name="Tournament" required="required">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="TourGameNo">Tournament Game No</label>
+                        <input asp-for="TourGameNo" class="form-control" placeholder="Enter Tournament Game No" name="TourGameNo" required="required">
+
+                    </div>
+                    <div class="form-group">
+
+                        <label asp-for="GameTime">Game Time</label>
+                        <input asp-for="GameTime" class="form-control" placeholder="Enter Game Time" name="GameTime" required="required">
+                    </div>
+                    <div class="form-group">
+
+                        <label asp-for="FirstTeam">First Team</label>
+                        <input asp-for="FirstTeam" class="form-control" placeholder="Enter First Team Name" name="FirstTeam" required="required">
+                    </div>
+                    <div class="form-group">
+
+                        <label asp-for="SecondTeam">Second Team</label>
+                        <input asp-for="SecondTeam" class="form-control" placeholder="Enter Second Team Name" name="SecondTeam" required="required">
+                    </div>
+                    @*<div class="form-group">
+                        <label>First Team Image </label>
+                        <input type="file" name="files" />
+
+                    </div>
+                    <div class="form-group">
+                        <label>Second Team Image </label>
+                        <input type="file" name="files" />
+
+                    </div>*@
+
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-success" value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+
+@*@using StadiumManagementSys.ViewModel
+@model Tuple<GameScheduleVM, ImageVM>
+
+
+<div>
+    @using (Html.BeginForm("NewGame", "GameSchedule", FormMethod.Post))
+    {
+        <label>Tournament Game No</label><br />
+        @Html.TextBoxFor(tuple => tuple.Item1.TourGameNo, new { @Name = "TourGameNO" })<br />
+        <lable>Game No</lable>
+        @Html.TextBoxFor(tuple => tuple.Item1.GameNo, new { @Name = "GameNo" })
+        <lable> Tournament Name</lable>
+        @Html.TextBoxFor(tuple => tuple.Item1.Tournament, new { @Name = "Tournament" })
+        <lable>Game Time </lable>
+        @Html.TextBoxFor(tuple => tuple.Item1.GameTime, new { type = "date", @Name = "GameTime" })
+        <lable> First Team name </lable>
+        @Html.TextBoxFor(tuple => tuple.Item1.FirstTeam, new { @Name = "FirstTeam" })
+        <lable> Second Team name</lable>
+        @Html.TextBoxFor(tuple => tuple.Item1.SecondTeam, new { @Name = "SecondTeam" })
+
+
+
+    }
+        <form asp-controller="GameSchedule" asp-action="NewGame" enctype="multipart/form-data" method="post">
+            <label>First Team Image </label>
+            <input type="file" name="files" />
+            <label> Second Team Image</label>
+            <input type="file" name="files" />
+            <button>post</button>
+        </form>
+   
+</div>*@

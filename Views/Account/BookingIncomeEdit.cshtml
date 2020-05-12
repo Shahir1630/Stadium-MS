@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["title"] = "Edit Income";
+}
+@model StadiumManagementSys.Models.Income
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form asp-action="BookingIncomeEdit" asp-controller="Account" asp-route-Id="Id" method="post" role="form">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit Booking Income</h4>
+                <a asp-action="BookingIncomeList" asp-controller="Account" class="close" data-dismiss="modal" aria-hidden="true">x</a>
+
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label asp-for="Id">Transaction Id</label>
+                    <input asp-for="Id" class="form-control" name="Id">
+
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="OrganizationName">Organization Name</label>
+                    <input asp-for="OrganizationName" class="form-control" name="OrganizationName">
+
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Date">Payment Date</label>
+                    <input asp-for="Date" class="form-control" name="Date">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label asp-for="Email">Email</label>
+                    <input asp-for="Email" class="form-control" name="Email">
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Phone">Phone</label>
+                    <input asp-for="Phone" class="form-control" name="Phone">
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="BookingCost">Total Booking Cost</label>
+                    <input asp-for="BookingCost" class="form-control" name="BookingCost">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label asp-for="Advance">Advance Payment</label>
+                    <input asp-for="Advance" class="form-control" name="Advance">
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="Due">Due Payment</label>
+                    <input asp-for="Due" class="form-control" name="Due">
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+
+
+                <input type="submit" class="btn btn-success" value="Done">
+
+            </div>
+        </form>
+    </div>
+</div>
